@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from './core/core.service';
+import { log } from 'console';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { CoreService } from './core/core.service';
 })
 export class AppComponent implements OnInit {
   displayedColumns: string[] = [
-    'id',
+    '_id',
     'firstName',
     'lastName',
     'email',
@@ -72,8 +73,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-  deleteEmployee(id: number) {
-    this._empService.deleteEmployee(id).subscribe({
+  deleteEmployee(_id: number) {
+    console.log('uhhu');
+
+    this._empService.deleteEmployee(_id).subscribe({
+
       next: (res) => {
         this._coreService.openSnackBar('Employee deleted!', 'done');
         this.getEmployeeList();

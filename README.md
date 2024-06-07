@@ -1,4 +1,9 @@
 # CrudApp
+Dependency to install
+npm i
+npx json-server db.json   // json server start
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
